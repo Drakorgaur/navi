@@ -1,0 +1,74 @@
+alias kubectl=microk8s.kubectl
+
+get_into_pod() {
+  # gets into pod(pod name $1) and sets additional flags by ${@:2}
+  kubectl exec --stdin --tty $1 ${@:2} -- /bin/bash
+}
+
+list_all() {
+  kubectl get $1 ${@:2}
+}
+
+list_all_pods() {
+  list_all pods ${@}
+}
+
+list_all_deployments() {
+  list_all deployments ${@}
+}
+
+list_all_nodes() {
+  list_all nodes ${@}
+}
+
+list_all_services() {
+  list_all services ${@}
+}
+
+list_all_enpoints() {
+  list_all endpoints ${@}
+}
+
+list_all_ingress() {
+  list_all ingress ${@}
+}
+
+list_all_pv() {
+  list_all pv ${@}
+}
+
+list_all_pvc() {
+  list_all pvc ${@}
+}
+
+list_all_endpoints() {
+  list_all ep ${@}
+}
+
+# Custom
+alias kb=microk8s.kubectl
+
+alias kbcmd=get_into_pod
+
+alias pods=list_all_pods
+alias po=pods
+
+alias deployments=list_all_deployments
+alias dp=deployments
+
+alias svc=list_all_services
+alias services=svc
+
+alias nodes=list_all_nodes
+alias no=nodes
+
+alias ep=list_all_endpoints
+alias endpoints=ep
+
+alias ingress=list_all_ingress
+alias ing=ingress
+
+alias pv=list_all_pv
+alias pvc=list_all_pvc
+
+alias helm=microk8s.helm3

@@ -1,0 +1,44 @@
+% docker
+
+# show all docker containers, dps
+docker ps
+
+# runs docker container, drun
+docker run <image_id>
+
+# inside <name> container opens a shell
+docker exec -it <container_id> /bin/bash
+$ container_id : docker ps | grep -E "*<container_name>*" | awk '{print $1}'
+
+# opens a shell in last created container
+docker exec -it $(docker ps -ql) /bin/bash
+
+# docker removes unactive container, drm
+docker rm <container_id>
+
+# docker kills active container, dkill
+docker kill <container_id>
+
+# docker removes all containers, drm -a
+docker rm -a
+
+# shows all docker images
+docker images -a
+
+# removes specific image, dmi
+docker rmi <image_id>
+
+# removes all images, drmi -a
+docker rmi -a
+
+# prune docker images
+docker system prune
+
+# removes all unused containers, drmc
+docker rm $(docker ps -a -q)
+
+# removes all unused docker images, drmi
+docker rmi $(docker images -q)
+
+# removes all unused docker images and containers
+docker system prune -a

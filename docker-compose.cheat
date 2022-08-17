@@ -1,0 +1,22 @@
+% docker-compose
+
+# docker-compose, dc
+docker-compose
+
+# docker-compose up, dcu
+docker-compose up
+
+# docker-compose up in background, dcud
+docker-compose up -d
+
+# docker-compose down, dcd
+docker-compose down
+
+# docker-compose build, dcb
+docker-compose build
+
+# executes a command, dcx
+docker-compose exec -it <image_id> <command>
+
+# build and up containers
+docker-compose build && docker-compose up -d

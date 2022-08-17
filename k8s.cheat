@@ -1,0 +1,51 @@
+% kubernetes, k8s
+
+# list all pods, pods
+kubectl get pods
+
+# list all services, svc
+kubectl get services
+
+# list all deployments, dp
+kubectl get deployments
+
+# list all ingresses, ing
+kubectl get ingress
+
+# list all configmaps, cm
+kubectl get configmaps
+
+# list all secrets, sc
+kubectl get secrets
+
+# list all persistent volumes, pv
+kubectl get pv
+
+# list all persistent volume claims, pvc
+kubectl get pvc
+
+# list all service accounts, sa
+kubectl get sa
+
+# list all endpoints, ep
+kubectl get ep
+
+# list all namespaces, ns
+kubectl get namespaces
+
+# opens shell in a pod, podexec
+kubectl exec --stdin --tty <pod_name> -- /bin/bash
+
+# opens shell in a pod via peco, podexec
+kubectl exec --stdin --tty <pod_name> -- /bin/bash
+$ pod_name : kubectl get pods | peco | awk '{print $1}'
+
+# list all contexts, ctx
+kubectl config get-contexts
+
+# use a context, ctx
+kubectl config use-context <context>
+
+# use a context via peco, ctx
+kubectl config use-context <context>
+$ context : kubectl config get-contexts | peco | awk '{print $1}'
